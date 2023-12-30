@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% include 'includes/header_refs.html' %}
+    <title>{{ home_infos.barber_name }}</title>
+</head>
+
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+
+        {% include 'includes/side_nav.html' %}
+
+        <div class="col-md-8 ms-sm-auto col-lg-9 p-0">
+            {% include 'includes/section_1.html' %}
+
+
+            {% include 'includes/section_2.html' %}
+
+
+            {% include 'includes/section_3.html' %}
+            {% include 'includes/booking_section.html' %}
+
+            {% include 'includes/section_4.html' %}
+
+
+            {% include 'includes/section_5.html' %}
+
+            {% include 'includes/footer.html' %}
+        </div>
+
+        {% include 'includes/footer_refs.html' %}
+    </div>
+</div>
+</body>
+</html>

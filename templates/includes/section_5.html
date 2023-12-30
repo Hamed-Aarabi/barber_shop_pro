@@ -1,0 +1,67 @@
+{% load static %}
+<section class="contact-section" id="section_5">
+    <div class="section-padding section-bg">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-8 col-12 mx-auto">
+                    <h2 class="text-center">Say hello</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-padding">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-12">
+                    <h5 class="mb-3"><strong>Contact</strong> Information</h5>
+
+                    <p class="text-white d-flex mb-1">
+                        <a href="tel: 120-240-3600" class="site-footer-link">
+                            (+98)
+                            {{ contacts.phone }}
+                        </a>
+                    </p>
+
+                    <p class="text-white d-flex">
+                        <a href="mailto:info@yourgmail.com" class="site-footer-link">
+                            {{ contacts.email }}
+                        </a>
+                    </p>
+
+                    <ul class="social-icon">
+                        {% for item in contact_socials %}
+                            <li class="social-icon-item">
+                                <a href="{{ item.link }}" class="social-icon-link {{ item.icon }}">
+                                </a>
+                            </li>
+                        {% endfor %}
+
+
+                    </ul>
+                </div>
+
+                <div class="col-lg-5 col-12 contact-block-wrap mt-5 mt-lg-0 pt-4 pt-lg-0 mx-auto">
+                    <div class="contact-block">
+                        <h6 class="mb-0">
+                            <i class="custom-icon bi-shop me-3"></i>
+
+                            <strong>{{ work_hours.title }}</strong>
+
+                            <span class="ms-auto">{{ work_hours.open_at }} - {{ work_hours.close_at }}</span>
+                        </h6>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 col-12 mx-auto mt-5 pt-5">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53952.815771842754!2d53.97518521187956!3d32.31048392343808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fa42b771f8d7b97%3A0xecefe64b226075d0!2sArdakan%2C%20Yazd%20Province%2C%20Iran!5e0!3m2!1sen!2s!4v1703925829299!5m2!1sen!2s"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

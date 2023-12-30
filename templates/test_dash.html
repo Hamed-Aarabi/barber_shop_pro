@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <p>Dashboard</p>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert-info">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+</body>
+</html>
