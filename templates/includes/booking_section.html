@@ -4,8 +4,9 @@
         <div class="row">
 
             <div class="col-lg-10 col-12 mx-auto">
-                <form action="#" method="post" class="custom-form booking-form" id="bb-booking-form"
+                <form method="post" class="custom-form booking-form" id="bb-booking-form"
                       role="form">
+
                     <div class="text-center mb-5">
                         <h2 class="mb-1">Book a seat</h2>
 
@@ -57,7 +58,9 @@
                         <div class="col-lg-4 col-md-10 col-8 mx-auto">
                             <button type="submit" class="form-control">Submit</button>
                         </div>
+
                     </div>
+                    {% csrf_token %}
                 </form>
             </div>
         </div>

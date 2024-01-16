@@ -4,6 +4,51 @@
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
 <script src="{% static 'js/click-scroll.js' %}"></script>
 <script src="{% static 'js/custom.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    $('#bb-booking-form').submit(function (e) {
 
+        e.preventDefault();
 
+        $.ajax({
+            type: "POST",
+            url: "/appointment/",
+            data: $(this).serialize(),
+            dataType: 'json', // Add this line to specify that the expected response is a JSON object
+            success: function (response) {
+                if (response.message === 'Done') {
+                    Swal.fire(
+                        'ثبت نوبت',
+                        'از انتخاب شما سپاسگذاریم',
+                        'success'
+                    );
+                } else if (response.message === 'duplicate') {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'تداخل نوبت',
+                        text: ' لطفا زمان یا تاریخ دیگری انتخاب کنید',
+                    });
+                } else if (response.message === 'Error') {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'خطا',
+                        text: 'درخواست ناموفق بود',
+                    });
+                } else if (response.message === 'out_date') {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'تاریخ نامعتبر',
+                        text: 'تاریخ شما خارج از روز کاری می باشد',
+                    });
+                } else if (response.message === 'out_time') {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'زمان نامعتبر',
+                        text: 'زمان شما خارج از ساعت کاری می باشد',
+                    });
+                }
+            },
+        });
+    });
+</script>
 

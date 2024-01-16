@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'aboutus_app.apps.AboutusAppConfig',
     'service_app.apps.ServiceAppConfig',
     'contactus_app.apps.ContactusAppConfig',
+    'appointment_app.apps.AppointmentAppConfig'
 ]
 
 MIDDLEWARE = [
